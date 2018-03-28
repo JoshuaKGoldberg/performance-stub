@@ -3,7 +3,7 @@
     "rules": {
         "interface-name": false,
         "linebreak-style": false,
-        "max-line-length": 175,
+        "max-line-length": [true, 175],
         "no-empty": false,
         "typedef": false
     }
