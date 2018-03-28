@@ -1,6 +1,6 @@
 # performance-stub
-[![Greenkeeper badge](https://badges.greenkeeper.io/joshuakgoldberg/performance-stub.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/joshuakgoldberg/performance-stub.svg?branch=master)](https://travis-ci.org/joshuakgoldberg/performance-stub)
+[![Greenkeeper badge](https://badges.greenkeeper.io/JoshuaKGoldberg/performance-stub.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/JoshuaKGoldberg/performance-stub.svg?branch=master)](https://travis-ci.org/JoshuaKGoldberg/performance-stub)
 [![NPM version](https://badge.fury.io/js/performance-stub.svg)](http://badge.fury.io/js/performance-stub)
 
 Stub JavaScript performance implementation for tests.
