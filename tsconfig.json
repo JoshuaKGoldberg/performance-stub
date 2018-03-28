@@ -2,7 +2,7 @@
     "compilerOptions": {
         "declaration": true,
         "forceConsistentCasingInFileNames": true,
-        "module": "amd",
+        "module": "commonjs",
         "moduleResolution": "node",
         "noImplicitAny": true,
         "noImplicitReturns": true,
