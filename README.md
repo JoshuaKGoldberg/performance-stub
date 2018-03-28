@@ -30,7 +30,7 @@ import { createStubPerformance } from "performance-stub";
 
 createStubPerformance({
     now: () => myClock.now,
-})
+});
 ```
 
 ### Deep Overrides
