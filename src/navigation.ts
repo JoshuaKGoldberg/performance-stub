@@ -5,7 +5,7 @@
  * @returns Stub version of a performance navigation object.
  * @see https://developer.mozilla.org/en-US/docs/Web/API/PerformanceNavigation
  */
-export const createPerformanceNavigation = (overrides: Partial<PerformanceNavigation> = {}): PerformanceNavigation => {
+export const createStubPerformanceNavigation = (overrides: Partial<PerformanceNavigation> = {}): PerformanceNavigation => {
     const navigation: PerformanceNavigation = {
         TYPE_BACK_FORWARD: 2,
         TYPE_NAVIGATE: 0,

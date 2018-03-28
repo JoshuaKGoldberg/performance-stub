@@ -5,7 +5,7 @@
  * @returns Stub version of a performance timing object.
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Performance/timing
  */
-export const createPerformanceTiming = (overrides: Partial<PerformanceTiming> = {}): PerformanceTiming => {
+export const createStubPerformanceTiming = (overrides: Partial<PerformanceTiming> = {}): PerformanceTiming => {
     const timing: PerformanceTiming = {
         connectEnd: 0,
         connectStart: 0,

@@ -25,5 +25,5 @@
     "src:tslint": "tslint -c tslint.json -p tsconfig.json -t stylish"
   },
   "types": "./src/index.d.ts",
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

@@ -1,5 +1,7 @@
 node_modules/
+*.d.ts
 ./**/*.d.ts
+*.js*
 ./**/*.js*
 !*.json
 npm-debug.log
