@@ -8,11 +8,17 @@ Stub JavaScript performance implementation for tests.
 ## Usage
 
 ```typescript
-import { performance } from "stub-performance";
+import { performance } from "performance-stub";
 ```
 
 The exported `performance` object satisfies TypeScript's `Performance` interface.
 All its `number` members are `0`, and all its functions do nothing.
+
+If you don't enjoy name conflicts, you can always import it under a different name:
+
+```typescript
+import { performance as stubPerformance } from "performance-stub";
+```
 
 ### Shallow Overrides
 
@@ -20,7 +26,7 @@ A `createStubPerformance` method is exported that creates new `Performance` inst
 Its first parameter takes in shallow overrides for the object that are spread onto the generated object.
 
 ```typescript
-import { createStubPerformance } from "stub-performance";
+import { createStubPerformance } from "performance-stub";
 
 createStubPerformance({
     now: () => myClock.now,
@@ -32,7 +38,7 @@ createStubPerformance({
 `createStubPerformance`'s second parameter takes in deep overrides for creating `navigation` and `timing` stubs.
 
 ```typescript
-import { createStubPerformance } from "stub-performance";
+import { createStubPerformance } from "performance-stub";
 
 createStubPerformance({}, {
     navigation: {
