@@ -39,8 +39,8 @@ export const createStubPerformance = (shallowOverrides: Partial<Performance> = {
         navigation: createStubPerformanceNavigation(deepOverrides.navigation),
         now: () => 0,
         setResourceTimingBufferSize: () => {},
-        timing: createStubPerformanceTiming(deepOverrides.timing),
         timeOrigin: 0,
+        timing: createStubPerformanceTiming(deepOverrides.timing),
         toJSON: () => JSON.stringify(performance),
         ...shallowOverrides,
     };

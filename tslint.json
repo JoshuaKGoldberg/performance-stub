@@ -5,6 +5,7 @@
         "linebreak-style": false,
         "max-line-length": [true, 175],
         "no-empty": false,
+        "no-shadowed-variable": false,
         "typedef": false
     }
 }
