@@ -14,6 +14,7 @@
     "typescript": "^2.7.2"
   },
   "license": "MIT",
+  "main": "./src/index.js",
   "name": "performance-stub",
   "repository": {
     "type": "git",
@@ -25,5 +26,5 @@
     "src:tslint": "tslint -c tslint.json -p tsconfig.json -t stylish"
   },
   "types": "./src/index.d.ts",
-  "version": "0.1.2"
+  "version": "0.1.3"
 }
