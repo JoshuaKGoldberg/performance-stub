@@ -1,0 +1,32 @@
+{
+  "author": {
+    "email": "joshuakgoldberg@outlook.com",
+    "name": "Josh Goldberg"
+  },
+  "browser": "./src/index.js",
+  "bugs": {
+    "url": "https://github.com/joshuakgoldberg/performance-stub/issues"
+  },
+  "dependencies": {
+    "inputwritr": "^0.7.1"
+  },
+  "description": "Stub performance implementation for tests.",
+  "devDependencies": {
+    "tslint": "5.9.1",
+    "tsutils": "^2.22.2",
+    "typescript": "^2.7.2"
+  },
+  "license": "MIT",
+  "name": "performance-stub",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:joshuakgoldberg/performance-stub.git"
+  },
+  "scripts": {
+    "src": "npm run src:tsc && npm run src:tslint",
+    "src:tsc": "tsc -p .",
+    "src:tslint": "tslint -c tslint.json -p tsconfig.json -t stylish"
+  },
+  "types": "./src/index.d.ts",
+  "version": "0.1.0"
+}
