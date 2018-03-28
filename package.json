@@ -10,7 +10,7 @@
   "dependencies": {
     "inputwritr": "^0.7.1"
   },
-  "description": "Stub performance implementation for tests.",
+  "description": "Stub JavaScript performance implementation for tests.",
   "devDependencies": {
     "tslint": "5.9.1",
     "tsutils": "^2.22.2",

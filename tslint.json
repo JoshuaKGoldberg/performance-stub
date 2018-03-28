@@ -1,15 +1,10 @@
 {
-    "extends": "./node_modules/shenanigans-manager/setup/tslint.json",
-    "linterOptions": {
-        "exclude": [
-            "./node_modules/**/*"
-        ]
-    },
+    "extends": "tslint:all",
     "rules": {
-        "completed-docs": false,
-        "no-any": false,
-        "no-unsafe-any": false,
-        "strict-boolean-expressions": false,
-        "strict-type-predicates": false
+        "interface-name": false,
+        "linebreak-style": false,
+        "max-line-length": 175,
+        "no-empty": false,
+        "typedef": false
     }
 }

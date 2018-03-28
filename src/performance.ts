@@ -1,5 +1,5 @@
-import { createPerformanceTiming } from "./timing";
-import { createPerformanceNavigation } from "./navigation";
+import { createStubPerformanceNavigation } from "./navigation";
+import { createStubPerformanceTiming } from "./timing";
 
 /**
  * Deep overrides for stub performance members.
@@ -18,13 +18,13 @@ export interface DeepPerformanceOverrides {
 
 /**
  * Creates a stub version of the performance object.
- * 
- * @param overrides   Any attributes to apply on top of the defaults.
+ *
+ * @param shallowOverrides   Any attributes to apply on top of the defaults.
  * @param deepOverrides   Any attributes to deeply apply to sub-members.
  * @returns Stub version of the performance object.
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Performance
  */
-export const createPerformanceStub = (overrides: Partial<Performance> = {}, deepOverrides: Partial<DeepPerformanceOverrides> = {}): Performance => {
+export const createStubPerformance = (shallowOverrides: Partial<Performance> = {}, deepOverrides: Partial<DeepPerformanceOverrides> = {}): Performance => {
     const performance: Performance = {
         clearMarks: () => {},
         clearMeasures: () => {},
@@ -36,16 +36,16 @@ export const createPerformanceStub = (overrides: Partial<Performance> = {}, deep
         getMeasures: () => [],
         mark: () => {},
         measure: () => {},
-        navigation: createPerformanceNavigation(deepOverrides.navigation),
+        navigation: createStubPerformanceNavigation(deepOverrides.navigation),
         now: () => 0,
         setResourceTimingBufferSize: () => {},
-        timing: createPerformanceTiming(deepOverrides.timing),
+        timing: createStubPerformanceTiming(deepOverrides.timing),
         timeOrigin: 0,
         toJSON: () => JSON.stringify(performance),
-        ...overrides,
+        ...shallowOverrides,
     };
 
     return performance;
 };
 
-export const performance = createPerformanceStub();
+export const performance = createStubPerformance();

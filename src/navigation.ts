@@ -7,13 +7,13 @@
  */
 export const createPerformanceNavigation = (overrides: Partial<PerformanceNavigation> = {}): PerformanceNavigation => {
     const navigation: PerformanceNavigation = {
-        redirectCount: 0,
-        toJSON: () => JSON.stringify(navigation),
-        type: 0,
         TYPE_BACK_FORWARD: 2,
         TYPE_NAVIGATE: 0,
         TYPE_RELOAD: 1,
         TYPE_RESERVED: 255,
+        redirectCount: 0,
+        toJSON: () => JSON.stringify(navigation),
+        type: 0,
         ...overrides,
     };
 
