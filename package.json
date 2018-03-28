@@ -7,9 +7,6 @@
   "bugs": {
     "url": "https://github.com/joshuakgoldberg/performance-stub/issues"
   },
-  "dependencies": {
-    "inputwritr": "^0.7.1"
-  },
   "description": "Stub JavaScript performance implementation for tests.",
   "devDependencies": {
     "tslint": "5.9.1",
