@@ -2,6 +2,7 @@
     "compilerOptions": {
         "declaration": true,
         "forceConsistentCasingInFileNames": true,
+        "lib": ["es5"],
         "module": "commonjs",
         "moduleResolution": "node",
         "noImplicitAny": true,
