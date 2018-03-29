@@ -14,7 +14,13 @@
     "typescript": "^2.7.2"
   },
   "keywords": [
-    "fakes", "javascript", "stub", "performance", "tests", "types", "typescript"
+    "fakes",
+    "javascript",
+    "stub",
+    "performance",
+    "tests",
+    "types",
+    "typescript"
   ],
   "license": "MIT",
   "main": "./src/index.js",
@@ -33,5 +39,5 @@
     "verify": "npm run src && npm run test"
   },
   "types": "./src/index.d.ts",
-  "version": "0.2.0"
+  "version": "0.2.1"
 }

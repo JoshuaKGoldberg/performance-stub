@@ -24,6 +24,11 @@ export const performance = {
 };
 
 /**
+ * Equivalent stub type to the DOM Performance type.
+ */
+export type StubPerformance = typeof performance;
+
+/**
  * Deep overrides for stub performance members.
  */
 export interface DeepPerformanceOverrides {
@@ -46,7 +51,7 @@ export interface DeepPerformanceOverrides {
  * @returns Stub version of the performance object.
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Performance
  */
-export const createStubPerformance = (shallowOverrides: Partial<typeof performance> = {}, deepOverrides: Partial<DeepPerformanceOverrides> = {}) => {
+export const createStubPerformance = (shallowOverrides: Partial<StubPerformance> = {}, deepOverrides: Partial<DeepPerformanceOverrides> = {}) => {
     const stubPerformance = {
         ...performance,
         ...shallowOverrides,
