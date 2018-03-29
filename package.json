@@ -26,7 +26,11 @@
   "scripts": {
     "src": "npm run src:tsc && npm run src:tslint",
     "src:tsc": "tsc -p .",
-    "src:tslint": "tslint -c tslint.json -p tsconfig.json -t stylish"
+    "src:tslint": "tslint -c tslint.json -p tsconfig.json -t stylish",
+    "test": "npm run test:dom && npm run test:nodom",
+    "test:dom": "tsc -p test/tsconfig.dom.json",
+    "test:nodom": "tsc -p test/tsconfig.nodom.json",
+    "verify": "npm run src && npm run test"
   },
   "types": "./src/index.d.ts",
   "version": "0.1.5"
