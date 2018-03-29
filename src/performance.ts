@@ -24,8 +24,8 @@ export interface DeepPerformanceOverrides {
  * @returns Stub version of the performance object.
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Performance
  */
-export const createStubPerformance = (shallowOverrides: Partial<Performance> = {}, deepOverrides: Partial<DeepPerformanceOverrides> = {}): Performance => {
-    const performance: Performance = {
+export const createStubPerformance = (shallowOverrides: Partial<Performance> = {}, deepOverrides: Partial<DeepPerformanceOverrides> = {}) => {
+    const performance = {
         clearMarks: () => {},
         clearMeasures: () => {},
         clearResourceTimings: () => {},
@@ -41,7 +41,7 @@ export const createStubPerformance = (shallowOverrides: Partial<Performance> = {
         setResourceTimingBufferSize: () => {},
         timeOrigin: 0,
         timing: createStubPerformanceTiming(deepOverrides.timing),
-        toJSON: () => JSON.stringify(performance),
+        toJSON: (): string => JSON.stringify(performance),
         ...shallowOverrides,
     };
 
