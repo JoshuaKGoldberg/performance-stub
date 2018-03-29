@@ -57,5 +57,13 @@ After [forking the repo from GitHub](https://help.github.com/articles/fork-a-rep
 git clone https://github.com/<your-name-here>/performance-stub
 cd performance-stub
 npm install
-npm run src
+npm run verify
 ```
+
+### Testing
+
+There are two test files under `test/`: `test.dom.ts` and `test.nodom.ts`.
+Each has a corresponding `tsconfig` file and task under `test:*`.
+
+`npm run test:dom` runs the TypeScript compiler with the normal DOM typings to ensure the created objects satisfy the `Performance` types.
+`npm run test:nodom` runs without the normal DOM typings.

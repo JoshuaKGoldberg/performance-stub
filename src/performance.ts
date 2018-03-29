@@ -2,18 +2,40 @@ import { createStubPerformanceNavigation } from "./navigation";
 import { createStubPerformanceTiming } from "./timing";
 
 /**
+ * Base stub for creating Performance objects.
+ */
+export const performance = {
+    clearMarks: () => {},
+    clearMeasures: () => {},
+    clearResourceTimings: () => {},
+    getEntries: () => [],
+    getEntriesByName: () => [],
+    getEntriesByType: () => [],
+    getMarks: () => [],
+    getMeasures: () => [],
+    mark: () => {},
+    measure: () => {},
+    navigation: createStubPerformanceNavigation(),
+    now: () => 0,
+    setResourceTimingBufferSize: () => {},
+    timeOrigin: 0,
+    timing: createStubPerformanceTiming(),
+    toJSON: (): string => JSON.stringify(performance),
+};
+
+/**
  * Deep overrides for stub performance members.
  */
 export interface DeepPerformanceOverrides {
     /**
      * Overrides for navigation properties.
      */
-    navigation: Partial<PerformanceNavigation>;
+    navigation: Partial<typeof performance.navigation>;
 
     /**
      * Overrides for timing properties.
      */
-    timing: Partial<PerformanceTiming>;
+    timing: Partial<typeof performance.timing>;
 }
 
 /**
@@ -24,28 +46,25 @@ export interface DeepPerformanceOverrides {
  * @returns Stub version of the performance object.
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Performance
  */
-export const createStubPerformance = (shallowOverrides: Partial<Performance> = {}, deepOverrides: Partial<DeepPerformanceOverrides> = {}): Performance => {
-    const performance: Performance = {
-        clearMarks: () => {},
-        clearMeasures: () => {},
-        clearResourceTimings: () => {},
-        getEntries: () => [],
-        getEntriesByName: () => [],
-        getEntriesByType: () => [],
-        getMarks: () => [],
-        getMeasures: () => [],
-        mark: () => {},
-        measure: () => {},
-        navigation: createStubPerformanceNavigation(deepOverrides.navigation),
-        now: () => 0,
-        setResourceTimingBufferSize: () => {},
-        timeOrigin: 0,
-        timing: createStubPerformanceTiming(deepOverrides.timing),
-        toJSON: () => JSON.stringify(performance),
+export const createStubPerformance = (shallowOverrides: Partial<typeof performance> = {}, deepOverrides: Partial<DeepPerformanceOverrides> = {}) => {
+    const stubPerformance = {
+        ...performance,
         ...shallowOverrides,
     };
 
-    return performance;
-};
+    if (deepOverrides.navigation !== undefined) {
+        stubPerformance.navigation = {
+            ...stubPerformance.navigation,
+            ...deepOverrides.navigation,
+        };
+    }
 
-export const performance = createStubPerformance();
+    if (deepOverrides.timing !== undefined) {
+        stubPerformance.timing = {
+            ...stubPerformance.timing,
+            ...deepOverrides.timing,
+        };
+    }
+
+    return stubPerformance;
+};
