@@ -1,3 +1,4 @@
+import { Event } from "./event";
 import { createStubPerformanceNavigation } from "./navigation";
 import { createStubPerformanceTiming } from "./timing";
 
