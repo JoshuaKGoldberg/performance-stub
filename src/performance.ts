@@ -1,3 +1,4 @@
+import { Event } from "./event";
 import { createStubPerformanceNavigation } from "./navigation";
 import { createStubPerformanceTiming } from "./timing";
 
@@ -17,6 +18,7 @@ export const performance = {
     measure: () => {},
     navigation: createStubPerformanceNavigation(),
     now: () => 0,
+    onresourcetimingbufferfull: (event: Event): void => {},
     setResourceTimingBufferSize: () => {},
     timeOrigin: 0,
     timing: createStubPerformanceTiming(),
