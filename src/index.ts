@@ -1,3 +1,4 @@
 export * from "./performance";
-export * from "./navigation";
-export * from "./timing";
+export * from "./navigation-timing";
+export * from "./performance-timeline";
+export * from "./resource-timing";
