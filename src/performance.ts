@@ -1,6 +1,7 @@
 import { Event } from "./event";
-import { createStubPerformanceNavigation } from "./navigation";
-import { createStubPerformanceTiming } from "./timing";
+import { createStubPerformanceNavigation, createStubPerformanceTiming } from "./navigation-timing";
+import { performanceEntryStub } from "./performance-timeline";
+import { performanceResourceTimingStub } from "./resource-timing";
 
 /**
  * Base stub for creating Performance objects.
@@ -9,11 +10,11 @@ export const performance = {
     clearMarks: () => {},
     clearMeasures: () => {},
     clearResourceTimings: () => {},
-    getEntries: () => [],
-    getEntriesByName: () => [],
-    getEntriesByType: () => [],
-    getMarks: () => [],
-    getMeasures: () => [],
+    getEntries: () => [] as Array<typeof performanceResourceTimingStub>,
+    getEntriesByName: () => [] as Array<typeof performanceResourceTimingStub>,
+    getEntriesByType: () => [] as Array<typeof performanceResourceTimingStub>,
+    getMarks: () => [] as Array<typeof performanceEntryStub>,
+    getMeasures: () => [] as Array<typeof performanceEntryStub>,
     mark: () => {},
     measure: () => {},
     navigation: createStubPerformanceNavigation(),
@@ -22,7 +23,7 @@ export const performance = {
     setResourceTimingBufferSize: () => {},
     timeOrigin: 0,
     timing: createStubPerformanceTiming(),
-    toJSON: (): string => JSON.stringify(performance),
+    toJSON: () => JSON.stringify(performance),
 };
 
 /**
@@ -51,7 +52,7 @@ export interface DeepPerformanceOverrides {
  * @param shallowOverrides   Any attributes to apply on top of the defaults.
  * @param deepOverrides   Any attributes to deeply apply to sub-members.
  * @returns Stub version of the performance object.
- * @see https://developer.mozilla.org/en-US/docs/Web/API/Performance
+ * @see https://www.w3.org/TR/navigation-timing/#sec-window.performance-attribute
  */
 export const createStubPerformance = (shallowOverrides: Partial<StubPerformance> = {}, deepOverrides: Partial<DeepPerformanceOverrides> = {}) => {
     const stubPerformance = {
