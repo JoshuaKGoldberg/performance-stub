@@ -19,7 +19,7 @@ export const performance = {
     measure: () => {},
     navigation: createStubPerformanceNavigation(),
     now: () => 0,
-    onresourcetimingbufferfull: (event: Event): void => {},
+    onresourcetimingbufferfull: (_event: Event): void => {},
     setResourceTimingBufferSize: () => {},
     timeOrigin: 0,
     timing: createStubPerformanceTiming(),
