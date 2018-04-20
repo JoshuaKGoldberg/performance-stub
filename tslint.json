@@ -9,6 +9,7 @@
         "no-empty-interface": false,
         "no-shadowed-variable": false,
         "object-literal-sort-keys": false,
-        "typedef": false
+        "typedef": false,
+        "variable-name": false
     }
 }
