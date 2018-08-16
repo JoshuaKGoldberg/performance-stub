@@ -7,7 +7,7 @@ import {
 
 // This file verifies that types are compatible with TypeScript's `lib.dom.d.ts` types.
 
-const firstPerformance: Performance = performance;
-const stubPerformance: Performance = createStubPerformance();
-const stubPerformanceNavigation: PerformanceNavigation = createStubPerformanceNavigation();
-const stubPerformanceTiming: PerformanceTiming = createStubPerformanceTiming();
+export const firstPerformance: Performance = performance;
+export const stubPerformance: Performance = createStubPerformance();
+export const stubPerformanceNavigation: PerformanceNavigation = createStubPerformanceNavigation();
+export const stubPerformanceTiming: PerformanceTiming = createStubPerformanceTiming();

@@ -7,9 +7,11 @@ import { performanceResourceTimingStub } from "./resource-timing";
  * Base stub for creating Performance objects.
  */
 export const performance = {
+    addEventListener: () => {},
     clearMarks: () => {},
     clearMeasures: () => {},
     clearResourceTimings: () => {},
+    dispatchEvent: () => false,
     getEntries: (): Array<typeof performanceResourceTimingStub> => [],
     getEntriesByName: (_name: string, _entryType: string): Array<typeof performanceResourceTimingStub> => [],
     getEntriesByType: (_entryType: string): Array<typeof performanceResourceTimingStub> => [],
@@ -20,6 +22,7 @@ export const performance = {
     navigation: createStubPerformanceNavigation(),
     now: () => 0,
     onresourcetimingbufferfull: (_event: Event): void => {},
+    removeEventListener: () => {},
     setResourceTimingBufferSize: () => {},
     timeOrigin: 0,
     timing: createStubPerformanceTiming(),
